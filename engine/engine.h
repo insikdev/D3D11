@@ -1,14 +1,11 @@
 #pragma once
-#define WIN32_LEAN_AND_MEAN
 
-#include <Windows.h>
-#include <string>
-#include <memory>
+#include "pch.h"
 #include "app.h"
 
 struct AppDesc {
-    std::shared_ptr<class IApp> app;
-    std::wstring name;
+    shared_ptr<class IApp> app;
+    wstring name;
     HINSTANCE hInstance;
     HWND hWnd;
     LONG width;
@@ -30,4 +27,19 @@ private: // Windows
 
 private:
     AppDesc mAppDesc;
+
+private:
+    void CreateDeviceAndSwapChain();
+    void CreateRenderTargetView();
+    void CreateDepthStencilView();
+    void SetViewport();
+
+private:
+    ComPtr<ID3D11Device> mDevice;
+    ComPtr<ID3D11DeviceContext> mContext;
+    ComPtr<IDXGISwapChain> mSwapChain;
+    ComPtr<ID3D11RenderTargetView> mRenderTargetView;
+    ComPtr<ID3D11Texture2D> mDetphStencilTexture;
+    ComPtr<ID3D11DepthStencilView> mDepthStencilView;
+    D3D11_VIEWPORT mViewport;
 };

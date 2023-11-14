@@ -9,13 +9,16 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Demo">
+      <UniqueIdentifier>{baf34aba-2505-4efb-b0bf-5549edaa4a31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="triangle.h">
-      <Filter>Header Files</Filter>
+      <Filter>Demo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -23,7 +26,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="triangle.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Demo</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
